@@ -11,5 +11,5 @@ void main() {
         systemNavigationBarDividerColor: Colors.orange),
   );
 
-  runApp(Quiz());
+  runApp(const Quiz());
 }

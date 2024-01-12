@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/text_style.dart';
 
 class Home extends StatelessWidget {
@@ -39,9 +40,12 @@ class Home extends StatelessWidget {
             onPressed: () {
               startQuiz(); //Or onPressed: startQuiz,
             },
-            label: const Text(
+            label: Text(
               'Start Quiz',
-              style: TextStyle(color: Colors.white),
+              style: GoogleFonts.craftyGirls(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           )
         ],
