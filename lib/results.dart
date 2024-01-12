@@ -4,9 +4,11 @@ import 'package:quiz_app/data/quiz.dart';
 import 'package:quiz_app/questions_summary.dart';
 
 class Results extends StatelessWidget {
-  const Results({super.key, required this.chosenAnswers});
+  const Results(
+      {super.key, required this.chosenAnswers, required this.restartQuiz});
 
   final List<String> chosenAnswers;
+  final Function() restartQuiz;
 
   List<Map<String, Object>> get summaryData {
     //get keyword - getter method
@@ -37,19 +39,20 @@ class Results extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-              'You answer $numCorrectQuestions out of $numTotalQuestions questions correctly!'),
+            'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.craftyGirls(
+                color: Colors.white, fontWeight: FontWeight.bold),
+          ),
           const SizedBox(
             height: 30,
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: QuestionsSummary(summaryData: summaryData),
-          ),
+          QuestionsSummary(summaryData: summaryData),
           const SizedBox(
             height: 30,
           ),
           TextButton.icon(
-            onPressed: () {},
+            onPressed: restartQuiz,
             icon: const Icon(
               Icons.rotate_left,
               color: Colors.white,
