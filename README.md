@@ -1,6 +1,6 @@
-# quiz_app
+# Quiz Application
 
-A new Flutter project.
+Simple Quiz app contains sample questions based on Flutter.
 
 ## Getting Started
 
